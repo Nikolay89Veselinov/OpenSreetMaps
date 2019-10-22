@@ -1,0 +1,22 @@
+{% load static from staticfiles %}
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <script type="text/javascript" src="{% static "js/vendor/jquery-2.1.0.min.js" %}"></script>
+    <link href="{% static "css/vendor/leaflet.css" %}" type="text/css" media="screen" rel="stylesheet" />
+    <link href="{% static "css/osm_field.css" %}" type="text/css" media="screen" rel="stylesheet" />
+    <script type="text/javascript" src="{% static "js/vendor/leaflet.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/osm_field.js" %}"></script>
+</head>
+
+<body>
+    {{ form.media }}
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Save" />
+    </form>
+</body>
+
+</html>
